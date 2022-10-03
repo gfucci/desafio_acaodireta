@@ -26,7 +26,6 @@
             $user->lastname = $data["lastname"];
             $user->email = $data["email"];
             $user->password = $data["password"];
-            $user->image = $data["image"];
             $user->token = $data["token"];
 
             return $user;
@@ -59,7 +58,6 @@
                 name = :name,
                 lastname = :lastname,
                 email = :email,
-                image = :image,
                 token = :token
                 WHERE id = :id
             ");
@@ -67,7 +65,6 @@
             $stmt->bindParam(":name", $user->name);
             $stmt->bindParam(":lastname", $user->lastname);
             $stmt->bindParam(":email", $user->email);
-            $stmt->bindParam(":image", $user->image);
             $stmt->bindParam(":token", $user->token);
             $stmt->bindParam(":id", $user->id);
 
@@ -76,7 +73,7 @@
             if ($redirect) {
 
                 //redirecionando para o perfil do usuario
-                $this->message->setMessage("Dados atualizados com sucesso", "success", "editProfile.php");
+                $this->message->setMessage("Dados atualizados com sucesso", "success", "/editProfile.php");
             }
         }
 
@@ -218,7 +215,17 @@
 
         public function changePassword($password) {
 
+            $stmt = $this->conn->prepare("UPDATE users SET
+                password = :password
+                WHERE id = :id;
+            ");
 
+            $stmt->bindParam(":password", $user->password);
+            $stmt->bindParam(":id", $user->id);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Senha alterada com sucesso!", "success", "/editProfile.php");
         }
 
     }

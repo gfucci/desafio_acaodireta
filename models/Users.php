@@ -7,8 +7,7 @@
         public $lastname;
         public $email;
         public $password;
-        public $tokenoken;
-        public $image;
+        public $token;
 
         function generateToken() {
 

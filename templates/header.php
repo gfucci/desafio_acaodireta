@@ -63,17 +63,17 @@
                     <?php if ($userData): ?>
                         <li class="nav-item">
                             <a href="<?= $BASE_URL ?>" class="nav-link">
-                                Home
+                                Meus Colaboradores
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= $BASE_URL ?>/createEmployee.php" class="nav-link ">
+                                Criar Colaborador
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?= $BASE_URL ?>/editProfile.php" class="nav-link bold ">
                                 <?= $userData->name ?>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= $BASE_URL ?>/createEmployee.php" class="nav-link ">
-                                Criar Funcionário
                             </a>
                         </li>
                         <li class="nav-item">

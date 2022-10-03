@@ -80,7 +80,7 @@
     border-color: #BADBCC;
 }
 
-/* LOGIN/REGISTER CONTAINER */
+/* LOGIN/REGISTER PAGE */
 #auth-row {
     justify-content: space-evenly;
 }
@@ -124,6 +124,29 @@
 
 .form-group label {
     margin-bottom: 8px;
+}
+
+.form-group input::placeholder {
+    font-style: italic;
+    color: #6E6E6E;
+    font-size: 14px;
+}
+
+/* EDIT PAGE */
+.page-description {
+    color: #6E6E6E;
+    font-style: italic;
+}
+
+.form-control.disabled {
+    background-color: #AAA;
+}
+
+.edit-profile-title {
+    font-size: 35px;
+    text-align: center;
+    color: #0E103D;
+    font-weight: bold;
 }
 
 /* HOME */
