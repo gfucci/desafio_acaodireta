@@ -12,7 +12,7 @@
 
         function generateToken() {
 
-            return hex2bin(random_bytes(50));
+            return bin2hex(random_bytes(50));
         }
 
         function generatePassword($password) {
