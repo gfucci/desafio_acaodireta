@@ -43,17 +43,17 @@
             <div class="cllapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="<?= $BASE_URL ?>" class="nav-link">
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link bold">
+                        <a href="" class="nav-link bold ">
                             usuario
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="<?= $BASE_URL ?>/auth.php" class="nav-link">
                             Entrar / Cadastrar
                         </a>
                     </li>

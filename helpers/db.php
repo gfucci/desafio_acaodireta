@@ -5,7 +5,7 @@
     $pass = "password";
     $db = "rhcontrol";
 
-    $conn = new PDO("mysql:host=$hosy;dbname=$db", $user, $pass);
+    $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
 
     //errors in development state
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

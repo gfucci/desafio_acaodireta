@@ -1,3 +1,10 @@
+/* PALETA DE CORES
+* #0E103D
+* F2D7EE
+* D3BCC0
+* 6CA6C1
+
+
 /* HEADER */
 
 #main-navbar {
@@ -46,7 +53,53 @@
     font-weight: bold;
 }
 
-/* home */
+/* LOGIN/REGISTER CONTAINER */
+#auth-row {
+    justify-content: space-evenly;
+}
+
+#login-container h2,
+#register-container h2 {
+    text-align: center;
+    border-bottom: 2px solid #6CA6C1;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#login-container form,
+#register-container form {
+    max-width: 400px;
+    margin: 30px auto;
+}
+
+#login-container .card-btn,
+#register-container .card-btn,
+.btn.card-btn {
+    color: #000;
+    background-color: #6CA6C1;
+    border: 2px solid #6CA6C1;
+    width: 100%;
+    transition: .5s;
+}
+
+#login-container .card-btn:hover,
+#register-container .card-btn:hover,
+.btn.card-btn:hover {
+    background-color: transparent;
+    color: #0E103D;
+    border-color: #6CA6C1;
+}
+    
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+}
+
+/* HOME */
 
 #main-container {
     min-height: 65vh;
