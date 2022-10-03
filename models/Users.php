@@ -9,6 +9,16 @@
         public $password;
         public $tokenoken;
         public $image;
+
+        function generateToken() {
+
+            return hex2bin(random_bytes(50));
+        }
+
+        function generatePassword($password) {
+
+            return password_hash($password, PASSWORD_DEFAULT);
+        }
     }
 
     interface userDaoInterface {

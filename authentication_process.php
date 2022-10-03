@@ -25,6 +25,30 @@
             //password validation
             if ($password === $confirmPassword) {
 
+                if ($userDao->findByEmail($email) === false) {
+
+                    $user = new User();
+
+                    //create token and hash
+                    $userToken = $user->generateToken();
+                    $finalPassword = $user->generatePassword($password);
+
+                    $user->name = $name;
+                    $user->lastname = $lastname;
+                    $user->email = $email;
+                    $user->password = $finalPassword;
+                    $user->token = $userToken;
+
+                    //login after create account
+                    $auth = true;
+
+                    $userDao->create($user, $auth);
+
+                } else {
+
+                    //Enviar msg de erro, email já existente
+                    $message->setMessage("Usuário ja cadastrado, tente outro e-mail", "error", "back");
+                }
 
             } else {
 
