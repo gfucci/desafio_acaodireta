@@ -16,7 +16,7 @@
         $message->clearMessage();
     }
 
-    //Login User
+    //Check if the user is logged in
     $userDao = new UserDAO($conn, $BASE_URL);
 
     $userData = $userDao->verifyToken(false);

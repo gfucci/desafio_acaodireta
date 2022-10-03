@@ -161,7 +161,11 @@
 
         public function destroyToken() {
 
+            //remove token to session
+            $_SESSION["token"] = "";
 
+            //redirecet home
+            $this->message->setMessage("Volte Sempre!", "success");
         }
 
         public function changePassword($password) {
