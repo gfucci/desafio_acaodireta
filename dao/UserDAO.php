@@ -21,13 +21,15 @@
 
             $user = new User();
 
-            $user->id = $data["$id"];
-            $user->name = $data["$name"];
-            $user->lastname = $data["$lastname"];
-            $user->email = $data["$email"];
-            $user->password = $data["$password"];
-            $user->image = $data["$image"];
-            $user->token = $data["$token"];
+            $user->id = $data["id"];
+            $user->name = $data["name"];
+            $user->lastname = $data["lastname"];
+            $user->email = $data["email"];
+            $user->password = $data["password"];
+            $user->image = $data["image"];
+            $user->token = $data["token"];
+
+            return $user;
         }
 
         public function create(User $user, $authUser = false) {
@@ -47,7 +49,7 @@
 
             //login user when create account
             if ($authUser) {
-                $this->setTokenToSession($user->token);
+                $this->setTokenToSession($user->token, true);
             }
         }        
 
@@ -56,21 +58,40 @@
 
         }
 
-        public function verifyToken($protectedPage = false) {
-
-
-        }
-
         public function setTokenToSession($token, $redirect = true) {
 
-        
-            //save token to session
             $_SESSION["token"] = $token;
 
             if ($redirect) {
 
                 //redirect to perfil page
                 $this->message->setMessage("Seja bem-vindo", "success", "/editProfile.php");
+            }
+        }
+
+        public function verifyToken($protectedPage = false) {
+
+            if (!empty($_SESSION["token"])) {
+              
+                //get token
+                $token = $_SESSION["token"];
+
+                $user = $this->findByToken($token);
+
+                if ($user) {
+
+                    return $user;
+
+                } else if ($protectedPage) {
+
+                    //redirect no authentication user
+                    $this->message->setMessage("Faça a autenticação para usar o sistema.", "error");
+                }
+
+            } else if ($protectedPage) {
+
+                //redirect no authentication user
+                $this->message->setMessage("Faça a autenticação para usar o sistema.", "error");
             }
         }
 
@@ -113,7 +134,29 @@
 
         public function findByToken($token) {
 
+            if ($token != "") {
 
+                $stmt = $this->conn->prepare("SELECT * FROM users WHERE token = :token");
+                $stmt->bindParam(":token", $token);
+                $stmt->execute();
+
+                //create user in database
+                if ($stmt->rowCount() > 0) {
+
+                    $data = $stmt->fetch();
+                    $user = $this->buildUser($data);
+
+                    return $user;
+
+                } else {
+
+                    return false;
+                }
+
+            } else {
+
+                return false;
+            }
         }
 
         public function destroyToken() {

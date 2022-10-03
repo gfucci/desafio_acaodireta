@@ -3,6 +3,7 @@
     require_once("helpers/globals.php");
     require_once("helpers/db.php");
     require_once("models/Message.php");
+    require_once("dao/UserDAO.php");
 
     //Message system
     $message = new Message($BASE_URL);
@@ -14,6 +15,11 @@
 
         $message->clearMessage();
     }
+
+    //Login User
+    $userDao = new UserDAO($conn, $BASE_URL);
+
+    $userData = $userDao->verifyToken(false);
 
 ?>
 
@@ -54,21 +60,34 @@
             </button>
             <div class="cllapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="<?= $BASE_URL ?>" class="nav-link">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link bold ">
-                            usuario
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= $BASE_URL ?>/authentication.php" class="nav-link">
-                            Entrar / Cadastrar
-                        </a>
-                    </li>
+                    <?php if ($userData): ?>
+                        <li class="nav-item">
+                            <a href="<?= $BASE_URL ?>" class="nav-link">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= $BASE_URL ?>/editProfile.php" class="nav-link bold ">
+                                <?= $userData->name ?>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= $BASE_URL ?>/createEmployee.php" class="nav-link ">
+                                Criar Funcionário
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= $BASE_URL ?>/logout.php" class="nav-link ">
+                                Sair
+                            </a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a href="<?= $BASE_URL ?>/authentication.php" class="nav-link">
+                                Entrar / Cadastrar
+                            </a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </nav>
