@@ -16,7 +16,7 @@
 
             if ($redirect == "back") {
 
-                header("Location: " . $_SERVER["HETTP_REFERER"]);
+                header("Location: " . $_SERVER["HTTP_REFERER"]);
 
             } else {
 
