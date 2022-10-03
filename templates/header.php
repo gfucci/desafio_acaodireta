@@ -2,6 +2,18 @@
     
     require_once("helpers/globals.php");
     require_once("helpers/db.php");
+    require_once("models/Message.php");
+
+    //Message system
+    $message = new Message($BASE_URL);
+
+    $printMsg = $message->getMessage();
+
+    //cleaning msg
+    if (!empty($printMsg["msg"])) {
+
+        $message->clearMessage();
+    }
 
 ?>
 
@@ -61,3 +73,10 @@
             </div>
         </nav>
     </header>
+    <?php if (!empty($printMsg["msg"])): ?>
+        <div class="msg-container">
+            <p class="msg <?= $printMsg["type"] ?>">
+                <?= $printMsg["msg"] ?>
+            </p>
+        </div>
+    <?php endif; ?>
