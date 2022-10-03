@@ -53,6 +53,33 @@
     font-weight: bold;
 }
 
+/* MESSAGE SYSTEM */
+.msg-container {
+    background-color: #D3BCC0;
+    padding: 15px;
+}
+
+.msg {
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.msg.error {
+    color: #771119;
+    background-color: #fa9da4;
+    border-color: #f3b1b7;
+}
+
+.msg.success {
+    color: #0F5132;
+    background-color: #D1E7DD;
+    border-color: #BADBCC;
+}
+
 /* LOGIN/REGISTER CONTAINER */
 #auth-row {
     justify-content: space-evenly;
