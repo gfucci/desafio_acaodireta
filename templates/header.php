@@ -53,7 +53,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= $BASE_URL ?>/auth.php" class="nav-link">
+                        <a href="<?= $BASE_URL ?>/authentication.php" class="nav-link">
                             Entrar / Cadastrar
                         </a>
                     </li>

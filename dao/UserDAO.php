@@ -2,6 +2,7 @@
 
     require_once("helpers/globals.php");
     require_once("helpers/db.php");
+    require_once("models/Users.php");
 
     class UserDAO implements userDaoInterface {
 
