@@ -55,7 +55,29 @@
 
         public function update(User $user, $redirect = true) {
 
+            $stmt = $this->conn->prepare("UPDATE users SET
+                name = :name,
+                lastname = :lastname,
+                email = :email,
+                image = :image,
+                token = :token
+                WHERE id = :id
+            ");
 
+            $stmt->bindParam(":name", $user->name);
+            $stmt->bindParam(":lastname", $user->lastname);
+            $stmt->bindParam(":email", $user->email);
+            $stmt->bindParam(":image", $user->image);
+            $stmt->bindParam(":token", $user->token);
+            $stmt->bindParam(":id", $user->id);
+
+            $stmt->execute();
+
+            if ($redirect) {
+
+                //redirecionando para o perfil do usuario
+                $this->message->setMessage("Dados atualizados com sucesso", "success", "editProfile.php");
+            }
         }
 
         public function setTokenToSession($token, $redirect = true) {
@@ -97,7 +119,33 @@
 
         public function authenticateUser($email, $password) {
 
+            //find user by email that came the input email
+            $user = $this->findByEmail($email);
 
+            if ($user) {
+
+                //checks id password hashes match
+                if (password_verify($password, $user->password)) {
+
+                    //generate new token
+                    $token = $user->generateToken();
+                    $this->setTokenToSession($token, false);
+
+                    //update user token
+                    $user->token = $token;
+                    $this->update($user, false);
+
+                    return true;
+
+                } else {
+
+                    return false;
+                }
+
+            } else {
+
+                return false;
+            }
         }
 
         public function findByEmail($email) {

@@ -63,6 +63,19 @@
         //login container
     } else if ($type === "login") {
 
+        $email = filter_input(INPUT_POST, "email");
+        $password = filter_input(INPUT_POST, "password");
+
+        if ($userDao->authenticateUser($email, $password)) {
+
+            $message->setMessage("Bem vindo!", "success", "/editProfile.php");
+
+        } else {
+
+            //sent to error msg, invalid data
+            $message->setMessage("Email ou senha incorretos, tente novamente!", "error", "back");
+        }
+
     } else {
 
         //malicious data
