@@ -70,6 +70,28 @@
 
         public function findById($id) {
 
+                        
+            $employee = [];
+
+            $stmt = $this->conn->prepare("SELECT * FROM employees
+                WHERE id = :id
+            ");
+
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $employeeArray = $stmt->fetch();
+
+                $employee = $this->buildEmployee($employeeArray);
+
+                return $employee;
+
+            } else {
+
+                return false;
+            }
         }
 
         public function findByName($name) {
@@ -82,6 +104,8 @@
             (name, lastname, image, occupation, users_id)
             VALUES (:name, :lastname, :image, :occupation, :users_id)
             ");
+
+            
 
             $stmt->bindParam(":name", $employee->name);
             $stmt->bindParam(":lastname", $employee->lastname);
@@ -96,10 +120,36 @@
 
         public function update(Employee $employee) {
 
+            $stmt = $this->conn->prepare("UPDATE employees SET 
+                name = :name,
+                lastname = :lastname,
+                occupation = :occupation,
+                image = :image
+                WHERE id = :id
+            ");
+            
+
+            $stmt->bindParam(":name", $employee->name);
+            $stmt->bindParam(":lastname", $employee->lastname);
+            $stmt->bindParam(":image", $employee->image);
+            $stmt->bindParam(":occupation", $employee->occupation);
+            $stmt->bindParam(":id", $employee->id);
+
+            $stmt->execute();
+
+            //print_r($employee->users_id); exit;
+
+            $this->message->setMessage("Colaborador editado com sucesso", "success", "/dashboard.php");
         }
 
         public function destroy($id) {
 
-        }
+            $stmt = $this->conn->prepare("DELETE FROM employees WHERE id = :id");
 
+            $stmt->bindParam(":id", $id);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Filme deletado com sucesso", "success", "/dashboard.php");
+        }
     }

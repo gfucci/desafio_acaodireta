@@ -15,6 +15,7 @@
 
     $userEmployees = $employeeDao->getEmployeeByUserId($userData->id);
 
+    
 ?>
 
     <div id="main-container" class="container-fluid">
@@ -55,9 +56,9 @@
                                 >
                                     <i class="far fa-edit"></i> Editar
                                 </a>
-                                <form action="<?= $BASE_URL ?>/employee_process.php" class="button-form">
+                                <form action="<?= $BASE_URL ?>/employee_process.php" class="button-form" method="POST">
                                     <input type="hidden" name="type" value="delete">
-                                    <input type="hidden" name="type" value="<?= $employee->id ?>">
+                                    <input type="hidden" name="id" value="<?= $employee->id ?>">
                                     <button type="submit" class="delete-btn">
                                         <i class="fas fa-times"></i> Deletar
                                     </button>
