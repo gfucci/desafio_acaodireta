@@ -142,11 +142,21 @@
     background-color: #AAA;
 }
 
-.edit-profile-title {
+.edit-profile-title,
+.page-title {
     font-size: 35px;
     text-align: center;
     color: #0E103D;
     font-weight: bold;
+}
+
+.page-description {
+    text-align: center;
+}
+
+#photo-container {
+    display: flex;
+    flex-direction: column;
 }
 
 /* HOME */
