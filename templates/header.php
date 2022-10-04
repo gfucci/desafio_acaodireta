@@ -43,7 +43,7 @@
 <body>
     <header>
         <nav id="main-navbar" class="navbar navbar-expand-lg">
-            <a href="<?= $BASE_URL ?>/dashboard.php" class="navbar navbar-brand">
+            <a href="<?= $BASE_URL ?>" class="navbar navbar-brand">
                 <img src="<?= $BASE_URL ?>/uploads/logo.png" alt="logo" id="logo">
                 <span id="rh-title">RH Control</span>
             </a>
@@ -79,6 +79,12 @@
                         <li class="nav-item">
                             <a href="<?= $BASE_URL ?>/logout.php" class="nav-link ">
                                 Sair
+                            </a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a href="<?= $BASE_URL ?>/authentication.php" class="nav-link">
+                                Entrar / Cadastrar
                             </a>
                         </li>
                     <?php endif; ?>

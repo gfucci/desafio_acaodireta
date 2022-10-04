@@ -11,7 +11,7 @@
 
         public function generateImageName() {
 
-            return bin2hex(random_bytes(60)) . "jpg";
+            return bin2hex(random_bytes(60)) . ".jpg";
         }
     }
 

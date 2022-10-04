@@ -159,7 +159,7 @@
                     }
 
                     //generate image name
-                    $imageName = $employee->generateImageName();
+                    $imageName = $employeeData->generateImageName();
 
                     imagejpeg($imageFile, "./uploads/employees/" . $imageName, 100);
 

@@ -15,14 +15,14 @@
 
     $userEmployees = $employeeDao->getEmployeeByUserId($userData->id);
 
-    
+    //print_r($userEmployees); exit;
 ?>
 
     <div id="main-container" class="container-fluid">
         <h2 class="section-title">Dashboard</h2>
         <p class="section-description">Adicione ou atualize as informações dos filmes que você enviou</p>
         <div class="col-md-12" id="add-employee-container">
-            <a href="<?= $BASE_URL ?>" class="btn card-btn">
+            <a href="<?= $BASE_URL ?>/createEmployee.php" class="btn card-btn">
                 <i class="fas fa-plus"></i> Adicionar Colaborador
             </a>
         </div>
@@ -31,6 +31,7 @@
                 <thead>
                     <th scope="col">#</th>
                     <th scope="col">Nome Completo</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Função</th>
                     <th scope="col" class="actions-column">Ações</th>
                 </thead>
@@ -45,6 +46,12 @@
                                 >
                                     <?= $employee->name ?> <?= $employee->lastname ?>
                                 </a>
+                            </td>
+                            <td>
+                                <div 
+                                    id="dash-image"
+                                    style="background-image: url('<?= $BASE_URL ?>/uploads/employees/<?= $employee->image ?>')";
+                                ></div>
                             </td>
                             <td>
                                 <?= $employee->occupation ?>

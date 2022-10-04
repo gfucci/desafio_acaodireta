@@ -115,7 +115,7 @@
 
             $stmt->execute();
 
-            $this->message->setMessage("Colaborador criado com sucesso", "success");
+            $this->message->setMessage("Colaborador criado com sucesso", "success", "/dashboard.php");
         }
 
         public function update(Employee $employee) {

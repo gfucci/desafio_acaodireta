@@ -253,6 +253,15 @@ tbody td {
     color: #DC3545;
 }
 
+#dash-image {
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    padding: 0;
+}
+
 /* HOME */
 
 #main-container {
