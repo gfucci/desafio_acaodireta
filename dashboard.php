@@ -22,7 +22,7 @@
         <p class="section-description">Adicione ou atualize as informações dos filmes que você enviou</p>
         <div class="col-md-12" id="add-employee-container">
             <a href="<?= $BASE_URL ?>" class="btn card-btn">
-                <i class="fas fa-plus"></i> Adicionar Filme
+                <i class="fas fa-plus"></i> Adicionar Colaborador
             </a>
         </div>
         <div class="col-md-12" id="employees-dashboard">
