@@ -133,7 +133,8 @@
 }
 
 /* EDIT PAGE */
-.page-description {
+.page-description,
+.section-description {
     color: #6E6E6E;
     font-style: italic;
 }
@@ -157,6 +158,99 @@
 #photo-container {
     display: flex;
     flex-direction: column;
+}
+
+/* DASHBOARD */
+#add-employee-container {
+    text-align: right;
+}
+
+#add-employee-container .card-btn {
+    width: 15%;
+}
+
+.section-title {
+    color: #0E103D;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.section-description {
+    font-size: 18px;
+}
+
+#employees-dashboard .table {
+    color: #0E103D;
+}
+
+#employees-dashboard .table th {
+    border-top: none;
+}
+
+#employees-dashboard .table tr {
+    padding: 15px 0;
+}
+
+.table-employee-title {
+    color: #0E103D;
+    font-weight: bold;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.table-employee-title:hover {
+    color: #6CA6C1;
+}
+
+.actions-column {
+    max-width: 80px;
+    text-align: center;
+}
+
+.actions-colum  {
+    max-width: 80px;
+    text-align: center;
+}
+
+.actions-colum form {
+    display: inline-block;
+}
+
+tbody td {
+    border-bottom: none
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+    transition: .5s;
+    border: none;
+    display: inline-block;
+}
+
+.edit-btn {
+    background-color: #6CA6C1;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.edit-btn:hover {
+    background-color: transparent;
+    color: #6CA6C1;
+}
+
+.delete-btn {
+    background-color: #DC3545;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.delete-btn:hover {
+    background-color: transparent;
+    color: #DC3545;
 }
 
 /* HOME */

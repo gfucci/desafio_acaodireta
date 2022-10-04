@@ -21,12 +21,12 @@
 
             $employee = new Employee();
 
-            $user->id = $data["id"];
-            $user->name = $data["name"];
-            $user->lastname = $data["lastname"];
-            $user->image = $data["image"];
-            $user->occupation = $data["occupation"];
-            $user->users_id = $data["users_id"];
+            $employee->id = $data["id"];
+            $employee->name = $data["name"];
+            $employee->lastname = $data["lastname"];
+            $employee->image = $data["image"];
+            $employee->occupation = $data["occupation"];
+            $employee->users_id = $data["users_id"];
 
             return $employee;
         }
@@ -39,12 +39,33 @@
 
         }
 
-        public function getMovieByOccupation($occupation) {
+        public function getEmployeeByOccupation($occupation) {
 
         }
 
-        public function getMovieByUserId($id) {
+        public function getEmployeeByUserId($id) {
 
+            $employees = [];
+
+            $stmt = $this->conn->prepare("SELECT * FROM employees
+                WHERE users_id = :users_id
+                ORDER BY id DESC
+            ");
+
+            $stmt->bindParam(":users_id", $id);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $employeesArray = $stmt->fetchAll();
+                
+                foreach ($employeesArray as $employee) {
+
+                    $employees[] = $this->buildEmployee($employee);
+                }
+            }
+
+            return $employees;
         }
 
         public function findById($id) {

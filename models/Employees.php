@@ -20,8 +20,8 @@
         public function buildEmployee($data);
         public function findAll();
         public function getLatestEmployee();
-        public function getMovieByOccupation($occupation);
-        public function getMovieByUserId($id);
+        public function getEmployeeByOccupation($occupation);
+        public function getEmployeeByUserId($id);
         public function findById($id);
         public function findByName($name);
         public function create(Employee $employee);

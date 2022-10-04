@@ -62,7 +62,7 @@
                 <ul class="navbar-nav">
                     <?php if ($userData): ?>
                         <li class="nav-item">
-                            <a href="<?= $BASE_URL ?>" class="nav-link">
+                            <a href="<?= $BASE_URL ?>/dashboard.php" class="nav-link">
                                 Meus Colaboradores
                             </a>
                         </li>
@@ -79,12 +79,6 @@
                         <li class="nav-item">
                             <a href="<?= $BASE_URL ?>/logout.php" class="nav-link ">
                                 Sair
-                            </a>
-                        </li>
-                    <?php else: ?>
-                        <li class="nav-item">
-                            <a href="<?= $BASE_URL ?>/authentication.php" class="nav-link">
-                                Entrar / Cadastrar
                             </a>
                         </li>
                     <?php endif; ?>
