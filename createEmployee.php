@@ -52,11 +52,11 @@
                     >
                 </div>
                 <div class="form-group" id="photo-container">
-                    <label for="photo">Foto:</label>
+                    <label for="image">Foto:</label>
                     <input 
                         type="file" 
-                        name="photo" 
-                        id="photo" 
+                        name="image" 
+                        id="image" 
                         class="form-control-file"
                     >
                 </div>

@@ -57,6 +57,20 @@
 
         public function create(Employee $employee) {
 
+            $stmt = $this->conn->prepare("INSERT INTO employees 
+            (name, lastname, image, occupation, users_id)
+            VALUES (:name, :lastname, :image, :occupation, :users_id)
+            ");
+
+            $stmt->bindParam(":name", $employee->name);
+            $stmt->bindParam(":lastname", $employee->lastname);
+            $stmt->bindParam(":image", $employee->image);
+            $stmt->bindParam(":occupation", $employee->occupation);
+            $stmt->bindParam(":users_id", $employee->users_id);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Colaborador criado com sucesso", "success");
         }
 
         public function update(Employee $employee) {
