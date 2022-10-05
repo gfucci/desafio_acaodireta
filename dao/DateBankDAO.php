@@ -19,24 +19,66 @@
 
         public function buildDateBank($data) {
 
-            $dateBank = new buildDateBank();
+            $dateBank = new DateBank();
 
             $dateBank->id = $data["id"];
             $dateBank->entry = $data["entry"];
-            $dateBank->exit = $data["exit"];
-            $dateBank->date = $data["date"];
+            $dateBank->output = $data["output"];
+            $dateBank->calendar = $data["calendar"];
             $dateBank->employees_id = $data["employees_id"];
-            $dateBank->users_id = $data["users_id"];
 
             return $dateBank;
         }
 
-        public function create($entry, $exit) {
+        public function getDateBankByEmployeeId($id) {
 
+            $dateBanks = [];
 
+            $stmt = $this->conn->prepare("SELECT * FROM dateBank 
+                WHERE employees_id = :employees_id
+                ORDER BY id DESC
+            ");
+
+            $stmt->bindParam("employees_id", $id);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $dateBankArray = $stmt->fetchAll();
+
+                foreach ($dateBankArray as $dateBank) {
+
+                    $dateBanks[] = $this->buildDateBank($dateBank);
+                }
+            }
+
+            return $dateBanks;
         }
 
-        public function getDatesBank($id) {
+        public function createPoint($dateBank) {
+
+            $stmt = $this->conn->prepare("INSERT INTO 
+            dateBank (id, entry, calendar, employees_id)
+                VALUES (
+                    :id, 
+                    :entry,
+                    :calendar,
+                    :employees_id
+                )
+
+            ");
+
+            $stmt->bindParam(":id", $dateBank->id);
+            $stmt->bindParam(":entry", $dateBank->entry);
+            $stmt->bindParam(":calendar", $dateBank->calendar);
+            $stmt->bindParam(":employees_id", $dateBank->employees_id);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Ponto criado com sucesso", "success", "back");
+        }
+
+        public function updatePoint($id) {
 
 
         }
