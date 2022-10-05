@@ -18,5 +18,5 @@
         public function findById($id);
         public function createOutputPoint($dateBank);
         public function updatePoint($id);
-        public function destroy();
+        public function destroy($id);
     }

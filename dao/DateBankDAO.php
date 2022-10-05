@@ -128,9 +128,15 @@
 
         }
 
-        public function destroy() {
+        public function destroy($id) {
 
+            $stmt = $this->conn->prepare("DELETE FROM dateBank WHERE id = :id");
 
+            $stmt->bindParam(":id", $id);
+
+            $stmt->execute();
+
+            $this->message->setMessage("Ponto deletado com sucesso", "success", "back");
         }
 
     }
