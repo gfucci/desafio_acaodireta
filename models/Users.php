@@ -32,5 +32,5 @@
         public function findById($id);
         public function findByToken($token);
         public function destroyToken();
-        public function changePassword($password);
+        public function changePassword(User $user);
     }

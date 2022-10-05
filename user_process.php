@@ -36,11 +36,15 @@
 
         if ($password === $confirmPassword) {
 
-            $updatedPassword = $userData->generatePassword($password);
+            $updatedPassword = $userData->generatePassword($password);  
 
             $userData->password = $updatedPassword;
 
             $userDao->changePassword($userData);
+
+        } else {
+
+            $message->setMessage("As senha não são iguais, tente novamente!", "error", "back");
         }
 
     } else {

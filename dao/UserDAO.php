@@ -213,7 +213,7 @@
             $this->message->setMessage("Volte Sempre!", "success");
         }
 
-        public function changePassword($password) {
+        public function changePassword(User $user) {
 
             $stmt = $this->conn->prepare("UPDATE users SET
                 password = :password
