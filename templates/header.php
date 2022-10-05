@@ -68,7 +68,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="<?= $BASE_URL ?>/createEmployee.php" class="nav-link ">
-                                Criar Colaborador
+                                <i class="fa-regular fa-square-plus"></i> Criar Colaborador
                             </a>
                         </li>
                         <li class="nav-item">
