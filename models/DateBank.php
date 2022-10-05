@@ -15,6 +15,8 @@
         public function buildDateBank($data);
         public function getDateBankByEmployeeId($id);
         public function createPoint($dateBank);
+        public function findById($id);
+        public function createOutputPoint($dateBank);
         public function updatePoint($id);
         public function destroy();
     }

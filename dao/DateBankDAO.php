@@ -75,7 +75,52 @@
 
             $stmt->execute();
 
-            $this->message->setMessage("Ponto criado com sucesso", "success", "back");
+            $this->message->setMessage("Ponto de entrada criado com sucesso", "success", "back");
+        }
+
+        public function findById($id) {
+
+                        
+            $dateBank = [];
+
+            $stmt = $this->conn->prepare("SELECT * FROM dateBank
+                WHERE id = :id
+            ");
+
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+
+                $dateBankArray = $stmt->fetch();
+
+                $dateBank = $this->buildDateBank($dateBankArray);
+
+                return $dateBank;
+
+            } else {
+
+                return false;
+            }
+        }
+
+        public function createOutputPoint($dateBank) {
+
+            $stmt = $this->conn->prepare("UPDATE dateBank SET 
+                output = :output
+                WHERE id = :id
+            ");
+
+            $stmt->bindParam(":id", $dateBank->id);
+            $stmt->bindParam(":output", $dateBank->output);
+
+            /*print_r($dateBank->output);
+            echo "<br> aaa";
+            print_r($dateBank->id); exit;*/
+
+            $stmt->execute();
+
+            $this->message->setMessage("Ponto de saída criado com sucesso", "success", "back");
         }
 
         public function updatePoint($id) {
