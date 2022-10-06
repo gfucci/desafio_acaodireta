@@ -15,7 +15,17 @@
 
     $userEmployees = $employeeDao->getEmployeeByUserId($userData->id);
 
-    //print_r($userEmployees); exit;
+    //User dont put a photo
+    foreach ($userEmployees as $employee) {
+
+        if ($employee->image == "") {
+
+            echo "caiu no if";
+
+            $employee->image = "user.png";
+        }
+    }
+
 ?>
 
     <div id="main-container" class="container-fluid">

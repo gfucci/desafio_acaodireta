@@ -32,16 +32,6 @@
             $employee->occupation = $occupation;
             $employee->users_id = $userData->id;
 
-            /*print_r($_FILES); 
-            echo "<br> <br>";
-            print_r($_POST); 
-            echo "<br> <br>";
-            print_r($_FILES["image"]);
-            echo "<br> <br>";
-            print_r($_FILES["image"]["tmp_name"]);
-            echo "<br> <br>";*/
-            //exit;
-
             //upload employee image
             if (isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
 
@@ -71,7 +61,7 @@
 
                     imagejpeg($imageFile, "./uploads/employees/" . $imageName, 100);
 
-                    $employee->image = $imageName;
+                    $employee->image = $imageName;               
                     
                 } else {
 
