@@ -20,14 +20,11 @@
 
         if ($employee->image == "") {
 
-            echo "caiu no if";
-
             $employee->image = "user.png";
         }
     }
 
 ?>
-
     <div id="main-container" class="container-fluid">
         <h2 class="section-title">Dashboard</h2>
         <p class="section-description">Adicione ou atualize as informações dos filmes que você enviou</p>
