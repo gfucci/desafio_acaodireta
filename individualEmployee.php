@@ -108,7 +108,7 @@
                                 >
                                     <input type="hidden" name="type" value="delete">
                                     <input type="hidden" name="id" value="<?= $dateEmployee->id ?>">
-                                    <button type="submit" class="delete-btn" id="delete-btn">
+                                    <button type="submit" class="delete-btn" id="red-btn">
                                         <i class="fas fa-times"></i> Deletar
                                     </button>
                                 </form>

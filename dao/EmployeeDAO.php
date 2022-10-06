@@ -144,12 +144,15 @@
 
         public function destroy($id) {
 
+            $stmt = $this->conn->query("SET foreign_key_checks = 0");
+            $stmt->execute();
+
             $stmt = $this->conn->prepare("DELETE FROM employees WHERE id = :id");
 
             $stmt->bindParam(":id", $id);
 
             $stmt->execute();
 
-            $this->message->setMessage("Filme deletado com sucesso", "success", "/dashboard.php");
+            $this->message->setMessage("Colaborador deletado com sucesso", "success", "/dashboard.php");
         }
     }

@@ -137,6 +137,7 @@
 .section-description {
     color: #6E6E6E;
     font-style: italic;
+    text-align: left;
 }
 
 .form-control.disabled {
@@ -203,12 +204,12 @@
 }
 
 .actions-column {
-    max-width: 80px;
+    max-width: 100px;
     text-align: center;
 }
 
 .actions-colum  {
-    max-width: 80px;
+    max-width: 100px;
     text-align: center;
 }
 
@@ -298,7 +299,7 @@ tbody td {
     padding: 3px;
 }
 
-.button-form #delete-btn {
+.button-form #red-btn {
     width: 175px;
     padding: 3px;
 }
