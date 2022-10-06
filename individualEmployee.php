@@ -42,6 +42,22 @@
     <div id="main-container" class="container-fluid">
         <h2 class="section-title">Banco de Horas</h2>
         <p class="section-description">Faça o lançamento de ponto das entradas e saídas dos colaboradores</p>
+        <input 
+            type="text" 
+            id="filterInput"
+            placeholder="Escreva a data para filtrar"
+            class="form-control"
+        >
+        <script>
+            $(document).ready(function(){
+                $("#filterInput").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#myDateData tr").filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
         <div class="col-md-12" id="employees-dashboard">
             <div class="col-md-12" id="add-employee-container">
                 <form action="<?= $BASE_URL ?>/datebank_process.php" class="button-form" method="POST">
@@ -59,10 +75,10 @@
                     <th scope="col">Hora de Saída</th>
                     <th scope="col" class="actions-column">Ações</th>
                 </thead>
-                <tbody>
+                <tbody id="myDateData">
                     <?php foreach ($dateBankEmployee as $dateEmployee): ?>
                         <tr>
-                            <td scope="row">
+                            <td scope="row" id="calendar">
                                 <?= $dateEmployee->calendar ?>
                             </td>
                             <td scope="row">
