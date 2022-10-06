@@ -244,6 +244,7 @@ tbody td {
 
 .delete-btn {
     background-color: #DC3545;
+    border: 1px solid #DC3545;
     color: #FFF;
     text-decoration: none;
 }
@@ -251,6 +252,7 @@ tbody td {
 .delete-btn:hover {
     background-color: transparent;
     color: #DC3545;
+    border-color: #DC3545;
 }
 
 #dash-image {
@@ -262,6 +264,54 @@ tbody td {
     padding: 0;
 }
 
+/* DATE BANK*/
+#date-btn {
+    margin: 20px 0;
+}
+
+#date-btn i {
+    margin-right: 10px;
+}
+
+#filterInput {
+    width: 20%;
+}
+
+#filterInput::placeholder {
+    font-size: 14px;
+    font-style: italic;
+    color: #6E6E6E;
+}
+
+#date-colum {
+    display: flex;
+    justify-content: center;
+}
+
+#date-colum .add-hour {
+    width: 175px;
+    background-color: #6CA6C1;
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #6CA6C1;
+    transition: .5s;
+    padding: 3px;
+}
+
+.button-form #delete-btn {
+    width: 175px;
+    padding: 3px;
+}
+
+#date-colum .add-hour i{
+    margin: 0px 8px;
+}
+
+#date-colum .add-hour:hover {
+    background-color: transparent;
+    border-color: #6CA6C1;
+    color: #0E103D;
+}
 
 /* HOME */
 

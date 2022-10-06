@@ -63,17 +63,19 @@
                 <form action="<?= $BASE_URL ?>/datebank_process.php" class="button-form" method="POST">
                     <input type="hidden" name="type" value="entry">
                     <input type="hidden" name="id" value="<?= $employee->id ?>">
-                    <button type="submit" class="btn card-btn">
+                    <button type="submit" class="btn card-btn" id="date-btn">
                         <i class="fa-regular fa-calendar-plus"></i> Adicionar Entrada
                     </button>
                 </form>
             </div>
             <table class="table">
                 <thead>
-                    <th scope="col">Data</th>
-                    <th scope="col">Hora da Entrada</th>
-                    <th scope="col">Hora de Saída</th>
-                    <th scope="col" class="actions-column">Ações</th>
+                    <tr>
+                        <th scope="col">Data</th>
+                        <th scope="col">Hora da Entrada</th>
+                        <th scope="col">Hora de Saída</th>
+                        <th scope="col" id="actions-date">Ações</th>
+                    </tr>
                 </thead>
                 <tbody id="myDateData">
                     <?php foreach ($dateBankEmployee as $dateEmployee): ?>
@@ -87,18 +89,26 @@
                             <td scope="row">
                                 <?= $dateEmployee->output ?>
                             </td>
-                            <td class="actions-colum">
-                                <form action="<?= $BASE_URL ?>/datebank_process.php" class="button-form" method="POST">
+                            <td class="actions-colum" id="date-colum">
+                                <form 
+                                    action="<?= $BASE_URL ?>/datebank_process.php" 
+                                    class="button-form" 
+                                    method="POST"
+                                >
                                     <input type="hidden" name="type" value="output">
                                     <input type="hidden" name="id" value="<?= $dateEmployee->id ?>">
-                                    <button type="submit" class="">
+                                    <button type="submit" class="add-hour">
                                         <i class="fa-regular fa-calendar-minus"></i> Adicionar Saída
                                     </button>
                                 </form>
-                                <form action="<?= $BASE_URL ?>/datebank_process.php" class="button-form" method="POST">
+                                <form 
+                                    action="<?= $BASE_URL ?>/datebank_process.php" 
+                                    class="button-form" 
+                                    method="POST"
+                                >
                                     <input type="hidden" name="type" value="delete">
                                     <input type="hidden" name="id" value="<?= $dateEmployee->id ?>">
-                                    <button type="submit" class="delete-btn">
+                                    <button type="submit" class="delete-btn" id="delete-btn">
                                         <i class="fas fa-times"></i> Deletar
                                     </button>
                                 </form>
