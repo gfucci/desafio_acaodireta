@@ -22,7 +22,6 @@
     $userData = $userDao->verifyToken(false);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
