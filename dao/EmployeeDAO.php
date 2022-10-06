@@ -31,18 +31,6 @@
             return $employee;
         }
 
-        public function findAll() {
-
-        }
-
-        public function getLatestEmployee() {
-
-        }
-
-        public function getEmployeeByOccupation($occupation) {
-
-        }
-
         public function getEmployeeByUserId($id) {
 
             $employees = [];
@@ -92,10 +80,6 @@
 
                 return false;
             }
-        }
-
-        public function findByName($name) {
-
         }
 
         public function create(Employee $employee) {

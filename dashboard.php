@@ -21,6 +21,7 @@
     <div id="main-container" class="container-fluid">
         <h2 class="section-title">Dashboard</h2>
         <p class="section-description">Adicione ou atualize as informações dos filmes que você enviou</p>
+        <?php require_once("templates/filter.php"); ?>
         <div class="col-md-12" id="add-employee-container">
             <a href="<?= $BASE_URL ?>/createEmployee.php" class="btn card-btn">
                 <i class="fas fa-plus"></i> Adicionar Colaborador
@@ -35,7 +36,7 @@
                     <th scope="col">Função</th>
                     <th scope="col" class="actions-column">Ações</th>
                 </thead>
-                <tbody>
+                <tbody id="myDateData">
                     <?php foreach ($userEmployees as $employee): ?>
                         <tr>
                             <td scope="row"><?= $employee->id ?></td>

@@ -18,12 +18,8 @@
     interface employeeDaoInterface {
 
         public function buildEmployee($data);
-        public function findAll();
-        public function getLatestEmployee();
-        public function getEmployeeByOccupation($occupation);
         public function getEmployeeByUserId($id);
         public function findById($id);
-        public function findByName($name);
         public function create(Employee $employee);
         public function update(Employee $employee);
         public function destroy($id);

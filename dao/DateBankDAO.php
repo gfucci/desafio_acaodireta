@@ -123,11 +123,6 @@
             $this->message->setMessage("Ponto de saída criado com sucesso", "success", "back");
         }
 
-        public function updatePoint($id) {
-
-
-        }
-
         public function destroy($id) {
 
             $stmt = $this->conn->prepare("DELETE FROM dateBank WHERE id = :id");

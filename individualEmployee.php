@@ -42,22 +42,7 @@
     <div id="main-container" class="container-fluid">
         <h2 class="section-title">Banco de Horas</h2>
         <p class="section-description">Faça o lançamento de ponto das entradas e saídas dos colaboradores</p>
-        <input 
-            type="text" 
-            id="filterInput"
-            placeholder="Escreva a data para filtrar"
-            class="form-control"
-        >
-        <script>
-            $(document).ready(function(){
-                $("#filterInput").on("keyup", function() {
-                    var value = $(this).val().toLowerCase();
-                    $("#myDateData tr").filter(function() {
-                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                    });
-                });
-            });
-        </script>
+        <?php require_once("templates/filter.php"); ?>
         <div class="col-md-12" id="employees-dashboard">
             <div class="col-md-12" id="add-employee-container">
                 <form action="<?= $BASE_URL ?>/datebank_process.php" class="button-form" method="POST">
@@ -98,7 +83,7 @@
                                     <input type="hidden" name="type" value="output">
                                     <input type="hidden" name="id" value="<?= $dateEmployee->id ?>">
                                     <button type="submit" class="add-hour">
-                                        <i class="fa-regular fa-calendar-minus"></i> Adicionar Saída
+                                        <i class="fa-regular fa-calendar-minus"></i> Saída
                                     </button>
                                 </form>
                                 <form 

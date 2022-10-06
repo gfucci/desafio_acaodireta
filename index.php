@@ -16,18 +16,28 @@
                 <h1 class="page-title">Projeto RH Control</h1>
                 <p class="page-description">Este projeto full stack tem como objetivo apresentar um controle de ponto de funcionários. Feito com php sem framework e MySQL.</p>
                 <button type="submit" class="btn card-btn" id="date-btn">
-                    <i class="fa-regular fa-calendar-plus"></i> Código do Projeto
+                    <i class="fa-brands fa-github-alt"></i> Código do Projeto
+                    
                 </button>
             </div>
         <?php else: ?>
             <div class="offset-md-4 col-md-4 new-movie-container">
                 <h1 class="page-title">Projeto RH Control</h1>
-                <p class="page-description">Este projeto full stack tem como objetivo apresentar um controle de ponto de funcionários. Feito com php sem framework e MySQL.</p>
-                <button type="submit" class="btn card-btn" id="date-btn">
-                    <i class="fa-regular fa-calendar-plus"></i> Começar Agora
+                <p class="page-description" id="index-description">Este projeto full stack tem como objetivo apresentar um controle de ponto de funcionários.</p>
+                <p class="page-description" id="index-description">Feito com PHP sem framework, MySQL, bootstrap, jQuery e outros...</p>
+                <button class="btn card-btn" id="date-btn">
+                    <a href="<?= $BASE_URL ?>/authentication.php">
+                        <i class="fa-solid fa-play"></i> Começar Agora
+                    </a>
                 </button>
-                <button type="submit" class="btn card-btn" id="date-btn">
-                    <i class="fa-regular fa-calendar-plus"></i> Código do Projeto
+                <button class="btn card-btn" id="date-btn">
+                    <a 
+                        href="https://github.com/gfucci/projeto_RH-Control_php" 
+                        rel="noopener noreferrer" 
+                        target="_blank"
+                    >
+                        <i class="fa-brands fa-github-alt"></i> Código do Projeto
+                    </a>
                 </button>
             </div>
         <?php endif; ?>
