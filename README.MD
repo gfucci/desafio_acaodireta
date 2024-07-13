@@ -15,7 +15,7 @@ Este desafio consiste em um sistema de lançamento de horas para o RH fazer o co
 * MySQL
 * Bootstrap
 
-## Considerações - data 2024
+## Considerações - 07/2024
 * Fiz este desafio no início da minha carreira em meados de 2022, no começo dos meus estudos em programação, mais especificamente em PHP. 
 
 * O desafio foi proposto pela empresa para verificar a minha lógica de programação e a regra principal era que não podia usar frameworks.
