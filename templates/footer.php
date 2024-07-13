@@ -39,7 +39,7 @@
                     <a href="#">Políticas de Privacidade</a>
                 </li>
                 <li>
-                    <a href="<?= $BASE_URL ?>/auth.php">Entrar / Cadastrar</a>
+                    <a href="<?= $BASE_URL ?>authentication.php">Entrar / Cadastrar</a>
                 </li>
             </ul>
         </div>

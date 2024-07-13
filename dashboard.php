@@ -30,7 +30,7 @@
         <p class="section-description">Adicione ou atualize as informações dos filmes que você enviou</p>
         <?php require_once("templates/filter.php"); ?>
         <div class="col-md-12" id="add-employee-container">
-            <a href="<?= $BASE_URL ?>/createEmployee.php" class="btn card-btn">
+            <a href="<?= $BASE_URL ?>createEmployee.php" class="btn card-btn">
                 <i class="fas fa-plus"></i> Adicionar Colaborador
             </a>
         </div>
@@ -49,7 +49,7 @@
                             <td scope="row"><?= $employee->id ?></td>
                             <td>
                                 <a 
-                                    href="<?= $BASE_URL ?>/individualEmployee.php?id=<?= $employee->id ?>" 
+                                    href="<?= $BASE_URL ?>individualEmployee.php?id=<?= $employee->id ?>" 
                                     class="table-employee-title"
                                 >
                                     <?= $employee->name ?> <?= $employee->lastname ?>
@@ -58,7 +58,7 @@
                             <td>
                                 <div 
                                     id="dash-image"
-                                    style="background-image: url('<?= $BASE_URL ?>/uploads/employees/<?= $employee->image ?>')";
+                                    style="background-image: url('<?= $BASE_URL ?>uploads/employees/<?= $employee->image ?>')";
                                 ></div>
                             </td>
                             <td>
@@ -66,12 +66,12 @@
                             </td>
                             <td class="actions-colum">
                                 <a 
-                                    href="<?= $BASE_URL ?>/editEmployee.php?id=<?= $employee->id ?>" 
+                                    href="<?= $BASE_URL ?>editEmployee.php?id=<?= $employee->id ?>" 
                                     class="edit-btn"
                                 >
                                     <i class="far fa-edit"></i> Editar
                                 </a>
-                                <form action="<?= $BASE_URL ?>/employee_process.php" class="button-form" method="POST">
+                                <form action="<?= $BASE_URL ?>employee_process.php" class="button-form" method="POST">
                                     <input type="hidden" name="type" value="delete">
                                     <input type="hidden" name="id" value="<?= $employee->id ?>">
                                     <button type="submit" class="delete-btn">

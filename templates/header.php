@@ -36,8 +36,8 @@
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/e2f70584a0.js" crossorigin="anonymous"></script>
     <!-- CSS -->
-    <link rel="shortcut icon" href="<?= $BASE_URL ?>/uploads/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?= $BASE_URL ?>/css/style.css">
+    <link rel="shortcut icon" href="<?= $BASE_URL ?>uploads/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>css/style.css">
     <title>RH Control</title>
 </head>
 <body>
@@ -45,7 +45,7 @@
         <nav id="main-navbar" class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a href="<?= $BASE_URL ?>" class="navbar-brand">
-                    <img src="<?= $BASE_URL ?>/uploads/logo.png" alt="logo" id="logo">
+                    <img src="<?= $BASE_URL ?>uploads/logo.png" alt="logo" id="logo">
                     <span id="rh-title">RH Control</span>
                 </a>
                 <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,28 +58,28 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <?php if ($userData): ?>
                             <li class="nav-item">
-                                <a href="<?= $BASE_URL ?>/dashboard.php" class="nav-link">
+                                <a href="<?= $BASE_URL ?>dashboard.php" class="nav-link">
                                     Meus Colaboradores
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?= $BASE_URL ?>/createEmployee.php" class="nav-link ">
+                                <a href="<?= $BASE_URL ?>createEmployee.php" class="nav-link ">
                                     <i class="fa-regular fa-square-plus"></i> Criar Colaborador
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?= $BASE_URL ?>/editProfile.php" class="nav-link bold ">
+                                <a href="<?= $BASE_URL ?>editProfile.php" class="nav-link bold ">
                                     <?= $userData->name ?>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?= $BASE_URL ?>/logout.php" class="nav-link ">
+                                <a href="<?= $BASE_URL ?>logout.php" class="nav-link ">
                                     Sair
                                 </a>
                             </li>
                         <?php else: ?>
                             <li class="nav-item">
-                                <a href="<?= $BASE_URL ?>/authentication.php" class="nav-link">
+                                <a href="<?= $BASE_URL ?>authentication.php" class="nav-link">
                                     Entrar / Cadastrar
                                 </a>
                             </li>

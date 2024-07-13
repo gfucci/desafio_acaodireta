@@ -14,7 +14,7 @@
                         Olá <?= $userData->name ?> <?= $userData->lastname ?>
                     </h2>
                     <p class="page-description">Preencha abaixo para editar os dados de sua conta:</p>
-                    <form action="<?= $BASE_URL ?>/user_process.php" method="POST">
+                    <form action="<?= $BASE_URL ?>user_process.php" method="POST">
                         <input type="hidden" name="type" value="update">
                         <div class="form-group">
                             <label for="name">Nome:</label>
@@ -59,7 +59,7 @@
                 <div class="col-md-4">
                     <h2 class="edit-profile-title">Editar Senha</h2>
                     <p class="page-description">Preencha abaixo para editar a senha de sua conta:</p>
-                    <form action="<?= $BASE_URL ?>/user_process.php" method="POST">
+                    <form action="<?= $BASE_URL ?>user_process.php" method="POST">
                         <input type="hidden" name="type" value="changepassword">
                         <div class="form-group">
                             <label for="password">Nova Senha:</label>

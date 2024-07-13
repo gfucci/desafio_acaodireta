@@ -15,7 +15,7 @@
             <h1 class="page-title">Criar Colaborador</h1>
             <p class="page-description">Crie um funcionário para controlar suas horas.</p>
             <form 
-                action="<?= $BASE_URL ?>/employee_process.php"
+                action="<?= $BASE_URL ?>employee_process.php"
                 id="add-movie-form"
                 method="POST"
                 enctype="multipart/form-data"

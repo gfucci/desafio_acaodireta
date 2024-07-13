@@ -45,7 +45,7 @@
         <?php require_once("templates/filter.php"); ?>
         <div class="col-md-12" id="employees-dashboard">
             <div class="col-md-12" id="add-employee-container">
-                <form action="<?= $BASE_URL ?>/datebank_process.php" class="button-form" method="POST">
+                <form action="<?= $BASE_URL ?>datebank_process.php" class="button-form" method="POST">
                     <input type="hidden" name="type" value="entry">
                     <input type="hidden" name="id" value="<?= $employee->id ?>">
                     <button type="submit" class="btn card-btn" id="date-btn">
@@ -76,7 +76,7 @@
                             </td>
                             <td class="actions-colum" id="date-colum">
                                 <form 
-                                    action="<?= $BASE_URL ?>/datebank_process.php" 
+                                    action="<?= $BASE_URL ?>datebank_process.php" 
                                     class="button-form" 
                                     method="POST"
                                 >
@@ -87,7 +87,7 @@
                                     </button>
                                 </form>
                                 <form 
-                                    action="<?= $BASE_URL ?>/datebank_process.php" 
+                                    action="<?= $BASE_URL ?>datebank_process.php" 
                                     class="button-form" 
                                     method="POST"
                                 >

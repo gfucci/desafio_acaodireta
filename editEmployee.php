@@ -21,7 +21,7 @@
             <h1 class="page-title">Editar Colaborador</h1>
             <p class="page-description">Faça aqui as edições necessárias.</p>
             <form 
-                action="<?= $BASE_URL ?>/employee_process.php"
+                action="<?= $BASE_URL ?>employee_process.php"
                 id="add-movie-form"
                 method="POST"
                 enctype="multipart/form-data"
